@@ -3,8 +3,9 @@
 
 A script that converts an image into ASCII art.
 
-![Sample Input Image](./test_images/vikram-poster.jpg)
-![Sample Output Image](./output/ascii-vikram-poster-screenshot.jpg)
+![Sample Input Image](https://raw.githubusercontent.com/InfantAjayVenus/image-to-ascii/master/test_images/vikram-poster.jpg)
+
+![Sample Output Image](https://raw.githubusercontent.com/InfantAjayVenus/image-to-ascii/master/output/ascii-vikram-poster-screenshot.png)
 
 ## Usage/Examples
 
