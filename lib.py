@@ -1,9 +1,3 @@
-import random
-import requests
-from PIL import Image
-from os import listdir
-import io
-
 def insertString(str, char, position):
     length = len(str)
     if (position > length or position < 0):
@@ -34,24 +28,3 @@ def getAsciiImage(image):
         asciiImage = insertString(asciiImage, '\n', i+count)
         count = count + 1
     return asciiImage.strip()
-
-def getRandomImage():    
-    response = requests.get("https://api.unsplash.com/photos/random?client_id=Q9L4l0YmQTwxj_FtySLRgxv22HzGWTbJ-nSgthX9ATY").json()
-    imageURL = response['urls']['raw']
-    imageResponse = requests.get(imageURL)
-    return Image.open(io.BytesIO(imageResponse.content))
-
-
-
-def test():
-    filesList = listdir('./test_images')
-    targetFile = random.choice(filesList)
-    print(targetFile)
-    image = Image.open('./test_images/{}'.format(targetFile))
-    asciiImageString = getAsciiImage(image)
-    targetFile = targetFile.split('.')[0]
-    with open('./output/ascii-{}.txt'.format(targetFile), 'w') as f:
-            f.write(asciiImageString)
-
-
-test()
